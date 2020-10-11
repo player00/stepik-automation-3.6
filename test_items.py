@@ -3,4 +3,5 @@ class TestAddToBasketButton:
 
     def test_add_to_basket_button(self, browser):
         browser.get(self.link)
-        assert browser.find_element_by_xpath("//form[@id='add_to_basket_form']/button")
+        button = browser.find_elements_by_class_name("btn-add-to-basket")
+        assert button, "button not found"
